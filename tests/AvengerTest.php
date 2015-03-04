@@ -11,7 +11,8 @@ class AvengerTest extends \PHPUnit_Framework_TestCase {
             ->setMethods(['query'])
             ->getMock();
 
-        $heli->method('query')->willReturn(['first_name'=>'test']);
+        // Mock database response
+        $heli->method('query')->willReturn(['first_name'=>'Richard', 'last_name'=>'Hendriks', 'company' => 'Pied Piper']);
 
         // Mock getting the connection
         $avenger = $this->getMockBuilder('\Marvel\Avenger')
@@ -24,7 +25,7 @@ class AvengerTest extends \PHPUnit_Framework_TestCase {
 
         $result = $avenger->find(4);
 
-        $this->assertEquals('test', $result['first_name']);
-
+        $this->assertEquals('Richard', $result['first_name']);
+        $this->assertEquals('Hendriks', $result['last_name']);
     }
 }

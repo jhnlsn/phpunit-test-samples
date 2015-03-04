@@ -1,0 +1,19 @@
+{
+    "name": "johnnelson/phpunit-test-samples",
+    "description": "A collection of phpunit test examples",
+    "require": {
+        "phpunit/phpunit": "~4.5",
+        "monolog/monolog": "~1.12"
+    },
+    "authors": [
+        {
+            "name": "johnymonster",
+            "email": "jnelson11@gmail.com"
+        }
+    ],
+    "autoload": {
+      "psr-4": {
+        "Marvel\\": "src/"
+      }
+    }
+}
